@@ -6,8 +6,7 @@ export enum ConfigInputMethodEnum {
 }
 
 export type ConfigInputMethod =
-  | ConfigInputMethodEnum.TEXT
-  | ConfigInputMethodEnum.KEYBOARD;
+  ConfigInputMethodEnum.TEXT | ConfigInputMethodEnum.KEYBOARD;
 
 export enum ConfigConvertDirectionEnum {
   FROM_ENG = "from-eng",
@@ -15,8 +14,7 @@ export enum ConfigConvertDirectionEnum {
 }
 
 export type ConfigConvertDirection =
-  | ConfigConvertDirectionEnum.FROM_ENG
-  | ConfigConvertDirectionEnum.TO_ENG;
+  ConfigConvertDirectionEnum.FROM_ENG | ConfigConvertDirectionEnum.TO_ENG;
 
 export interface Config {
   inputMethod: ConfigInputMethod;
