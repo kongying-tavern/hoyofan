@@ -11,6 +11,7 @@ export type KeyboardKeyDisplayType = "text" | "icon";
 export type KeyboardKeyType = "key";
 
 export interface KeyboardKeyDecoration {
+  visible: boolean;
   styles: { [key: string]: string };
   classes: { [key: string]: boolean };
 }

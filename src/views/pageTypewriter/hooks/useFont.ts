@@ -62,6 +62,7 @@ const fontOptions: FontGroupNode[] = [
         label: "枫丹文字",
         abbr: "枫丹文",
         url: FontGsFontaine,
+        meta: { allowNumber: true },
       },
     ],
   },

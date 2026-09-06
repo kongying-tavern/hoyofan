@@ -26,6 +26,7 @@ const keyboardLayout: KeyboardLayoutOption = {
   colTemplate: "repeat(20, .5fr)",
   rowTemplate: "auto",
   areaTemplate: [
+    "d1    d1    d2    d2    d3    d3    d4    d4    d5    d5    d6    d6    d7    d7    d8    d8    d9        d9        d0        d0",
     "q     q     w     w     e     e     r     r     t     t     y     y     u     u     i     i     o         o         p         p",
     ".     a     a     s     s     d     d     f     f     g     g     h     h     j     j     k     k         l         l         .",
     "caps  caps  z     z     x     x     c     c     v     v     b     b     n     n     m     m     backspace backspace backspace backspace",
@@ -33,7 +34,104 @@ const keyboardLayout: KeyboardLayoutOption = {
   ],
 };
 
+const numberDecorate = (
+  _keyboardState: KeyboardState,
+  fontOption: FontNode,
+): KeyboardKeyDecoration => {
+  const decorate: KeyboardKeyDecoration = {
+    visible: true,
+    styles: {},
+    classes: {},
+  };
+
+  if (!fontOption.meta?.allowNumber) {
+    decorate.visible = false;
+  }
+  return decorate;
+};
+
 const keyboardKeys: KeyboardKeyOption[] = [
+  // 数字按键区
+  {
+    type: "key",
+    keyCode: [Key.One, Key.Numpad1],
+    area: "d1",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "1",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Two, Key.Numpad2],
+    area: "d2",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "2",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Three, Key.Numpad3],
+    area: "d3",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "3",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Four, Key.Numpad4],
+    area: "d4",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "4",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Five, Key.Numpad5],
+    area: "d5",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "5",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Six, Key.Numpad6],
+    area: "d6",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "6",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Seven, Key.Numpad7],
+    area: "d7",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "7",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Eight, Key.Numpad8],
+    area: "d8",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "8",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Nine, Key.Numpad9],
+    area: "d9",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "9",
+  },
+  {
+    type: "key",
+    keyCode: [Key.Zero, Key.Numpad0],
+    area: "d0",
+    decorate: numberDecorate,
+    displayMode: ["text"],
+    text: "0",
+  },
   // 字母按键区
   {
     type: "key",
