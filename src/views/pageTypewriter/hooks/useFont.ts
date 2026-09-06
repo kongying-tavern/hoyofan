@@ -9,6 +9,7 @@ import FontGsKhaenriahChasm from "@/assets/font/genshin-impact/khaenriah/Khaenri
 import FontGsInazuma from "@/assets/font/genshin-impact/inazuma/InazumaBrush-Regular.woff2";
 import FontGsSumeru from "@/assets/font/genshin-impact/sumeru/SumeruScribe-Regular.woff2";
 import FontGsDeshret from "@/assets/font/genshin-impact/deshret/DeshretInscription-Regular.woff2";
+import FontGsFontaine from "@/assets/font/genshin-impact/fontaine/FontAinee-Regular.woff2";
 import FontSrStarrail from "@/assets/font/honkai-star-rail/star-rail/StarRailNeue-Sans-Regular.woff2";
 import FontSrLuofu from "@/assets/font/honkai-star-rail/luofu/XianzhouSeal-Regular.woff2";
 import FontZzzSystem from "@/assets/font/zenless-zone-zero/system/ZZZSystem-Regular.woff2";
@@ -55,6 +56,12 @@ const fontOptions: FontGroupNode[] = [
         label: "赤冠文字",
         abbr: "赤冠文",
         url: FontGsDeshret,
+      },
+      {
+        tag: "gs-fontaine",
+        label: "枫丹文字",
+        abbr: "枫丹文",
+        url: FontGsFontaine,
       },
     ],
   },
