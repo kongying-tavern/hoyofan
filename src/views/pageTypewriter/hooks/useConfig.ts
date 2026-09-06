@@ -1,4 +1,5 @@
 import type { Config } from '@/shared'
+import { ref } from 'vue'
 import { ConfigConvertDirectionEnum, ConfigInputMethodEnum } from '@/shared'
 import { useFont } from './useFont'
 

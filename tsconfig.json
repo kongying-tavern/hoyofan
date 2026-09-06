@@ -12,5 +12,5 @@
       "path": "./tsconfig.config.json"
     }
   ],
-  "include": ["env.d.ts", "auto-imports.d.ts", "src/**/*", "src/**/*.vue"]
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
 }

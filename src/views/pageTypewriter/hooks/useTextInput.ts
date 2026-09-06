@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 const text = ref('')
 
 export function useTextInput() {

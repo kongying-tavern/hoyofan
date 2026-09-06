@@ -1,5 +1,7 @@
+import type { Ref } from 'vue'
 import type { GlobalSettings } from '@/shared'
 import { useColorMode } from '@vueuse/core'
+import { computed, ref } from 'vue'
 
 const { system, store } = useColorMode()
 

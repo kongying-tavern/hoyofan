@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 const selectorVisible = ref(false)
 
 function openSelector() {
