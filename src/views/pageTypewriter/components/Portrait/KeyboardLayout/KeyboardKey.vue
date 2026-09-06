@@ -33,12 +33,23 @@ const widgetOptions = computed(() => {
 });
 
 const keyDecorate = computed(() => {
+  const defaultDecorate: KeyboardKeyDecoration = {
+    visible: true,
+    styles: {},
+    classes: {},
+  };
+
   if (widgetOptions.value.decorate === undefined) {
-    return {} as KeyboardKeyDecoration;
+    return _.cloneDeep(defaultDecorate);
   } else if (typeof widgetOptions.value.decorate === "function") {
-    return widgetOptions.value.decorate(keyboardState.value, config.value.font);
+    const decorateVal = widgetOptions.value.decorate(
+      keyboardState.value,
+      config.value.font,
+    );
+    return _.defaults(decorateVal, defaultDecorate);
   } else {
-    return widgetOptions.value.decorate;
+    const decorateVal = widgetOptions.value.decorate;
+    return _.defaults(decorateVal, defaultDecorate);
   }
 });
 
@@ -106,6 +117,7 @@ const keyPress = () => {
 <template>
   <div
     ref="wrapperRef"
+    v-if="keyDecorate.visible"
     :style="{ ...keyDecorate.styles, ...fontStyle, ...layoutStyle }"
     class="keyboard-component keyboard-widget keyboard-key cursor-pointer"
     :class="{ ...keyDecorate.classes, ...activeClass }"

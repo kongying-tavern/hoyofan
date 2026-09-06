@@ -3,16 +3,17 @@ import type { FontGroupNode, FontNode } from "@/shared";
 import ImgLogoGenshin from "../assets/logo-genshin.svg";
 import ImgLogoStarrail from "../assets/logo-starrail.svg";
 import ImgLogoZzz from "../assets/logo-zzz.svg";
-import FontGsTevat from "@/assets/font/genshin-impact/teyvat/TeyvatNeue-Regular-1.002.otf";
-import FontGsKhaenriah from "@/assets/font/genshin-impact/khaenriah/KhaenriahNeue-Regular-2.000.otf";
-import FontGsKhaenriahChasm from "@/assets/font/genshin-impact/khaenriah/KhaenriahNeue-Chasm-2.000.otf";
-import FontGsInazuma from "@/assets/font/genshin-impact/inazuma/InazumaNeue-Regular-1.000.otf";
-import FontGsSumeru from "@/assets/font/genshin-impact/sumeru/SumeruNeue-Regular-0.007.otf";
-import FontGsDeshret from "@/assets/font/genshin-impact/deshret/DeshretNeue-Regular-1.002.otf";
-import FontSrStarrail from "@/assets/font/honkai-star-rail/star-rail/StarRailNeue-Regular-0.200.otf";
-import FontSrLuofu from "@/assets/font/honkai-star-rail/luofu/LuofuNeue-Regular-0.100.otf";
-import FontZzzA from "@/assets/font/zenless-zone-zero/ZZZNeue-VariantA-0.003.otf";
-import FontZzzB from "@/assets/font/zenless-zone-zero/ZZZNeue-VariantB-0.003.otf";
+import FontGsTevat from "@/assets/font/genshin-impact/teyvat/TeyvatBlack-Regular.woff2";
+import FontGsKhaenriah from "@/assets/font/genshin-impact/khaenriah/KhaenriahSun-Regular.woff2";
+import FontGsKhaenriahChasm from "@/assets/font/genshin-impact/khaenriah/KhaenriahSun-Chasm.woff2";
+import FontGsInazuma from "@/assets/font/genshin-impact/inazuma/InazumaBrush-Regular.woff2";
+import FontGsSumeru from "@/assets/font/genshin-impact/sumeru/SumeruScribe-Regular.woff2";
+import FontGsDeshret from "@/assets/font/genshin-impact/deshret/DeshretInscription-Regular.woff2";
+import FontGsFontaine from "@/assets/font/genshin-impact/fontaine/FontAinee-Regular.woff2";
+import FontSrStarrail from "@/assets/font/honkai-star-rail/star-rail/StarRailNeue-Sans-Regular.woff2";
+import FontSrLuofu from "@/assets/font/honkai-star-rail/luofu/XianzhouSeal-Regular.woff2";
+import FontZzzSystem from "@/assets/font/zenless-zone-zero/system/ZZZSystem-Regular.woff2";
+import FontZzzA from "@/assets/font/zenless-zone-zero/a/ZZZA-Regular.woff2";
 
 const fontOptions: FontGroupNode[] = [
   {
@@ -56,6 +57,13 @@ const fontOptions: FontGroupNode[] = [
         abbr: "赤冠文",
         url: FontGsDeshret,
       },
+      {
+        tag: "gs-fontaine",
+        label: "枫丹文字",
+        abbr: "枫丹文",
+        url: FontGsFontaine,
+        meta: { allowNumber: true },
+      },
     ],
   },
   {
@@ -83,7 +91,7 @@ const fontOptions: FontGroupNode[] = [
     icon: ImgLogoZzz,
     children: [
       { tag: "zzz-a", label: "绝区零变体一", url: FontZzzA },
-      { tag: "zzz-b", label: "绝区零变体二", url: FontZzzB },
+      { tag: "zzz-system", label: "绝区零变体二", url: FontZzzSystem },
     ],
   },
 ];

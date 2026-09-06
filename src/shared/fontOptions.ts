@@ -6,6 +6,7 @@ export interface FontGroupNode {
 }
 
 export interface FontNodeMeta {
+  allowNumber?: boolean;
   allowCapsLock?: boolean;
 }
 
