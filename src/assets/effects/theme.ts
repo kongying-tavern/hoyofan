@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 import { useGlobalSettings } from '@/hooks'
 
 const { globalSettings } = useGlobalSettings()

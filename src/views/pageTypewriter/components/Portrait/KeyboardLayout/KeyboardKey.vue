@@ -2,7 +2,7 @@
 import type { MaybeElementRef } from '@vueuse/core'
 import type { KeyboardKeyDecoration, KeyboardKeyOption } from '@/shared'
 import { useMousePressed } from '@vueuse/core'
-import _ from 'lodash'
+import { cloneDeep, defaults } from 'lodash-es'
 import { computed, ref } from 'vue'
 import { getThemeColor } from '@/assets/effects/theme'
 import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
@@ -29,7 +29,7 @@ const widgetOptions = computed(() => {
     displayMode: [],
     iconSizeTag: '1x',
   }
-  return _.defaults({}, props.options, defaultOptions) as KeyboardKeyOption
+  return defaults({}, props.options, defaultOptions) as KeyboardKeyOption
 })
 
 const keyDecorate = computed(() => {
@@ -40,18 +40,18 @@ const keyDecorate = computed(() => {
   }
 
   if (widgetOptions.value.decorate === undefined) {
-    return _.cloneDeep(defaultDecorate)
+    return cloneDeep(defaultDecorate)
   }
   else if (typeof widgetOptions.value.decorate === 'function') {
     const decorateVal = widgetOptions.value.decorate(
       keyboardState.value,
       config.value.font,
     )
-    return _.defaults(decorateVal, defaultDecorate)
+    return defaults(decorateVal, defaultDecorate)
   }
   else {
     const decorateVal = widgetOptions.value.decorate
-    return _.defaults(decorateVal, defaultDecorate)
+    return defaults(decorateVal, defaultDecorate)
   }
 })
 
