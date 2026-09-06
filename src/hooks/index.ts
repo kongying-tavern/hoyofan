@@ -1,1 +1,1 @@
-export * from "./useGlobalSettings";
+export * from './useGlobalSettings'

@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { ConfigConvertDirectionEnum } from "@/shared";
-import { useConfig, useTextInput } from "../../../hooks";
-import CardBasic from "@/components/CardBasic/CardBasic.vue";
-import TextAreaBasic from "@/components/TextAreaBasic/TextAreaBasic.vue";
+import { computed } from 'vue'
+import CardBasic from '@/components/CardBasic/CardBasic.vue'
+import TextAreaBasic from '@/components/TextAreaBasic/TextAreaBasic.vue'
+import { ConfigConvertDirectionEnum } from '@/shared'
+import { useConfig, useTextInput } from '../../../hooks'
 
-const { config } = useConfig();
-const { text } = useTextInput();
+const { config } = useConfig()
+const { text } = useTextInput()
 
 const fontStyle = computed(() => {
   if (config.value.convertDirection === ConfigConvertDirectionEnum.FROM_ENG) {
     return {
       fontFamily: config.value.font.tag,
-    };
+    }
   }
-  return {};
-});
+  return {}
+})
 </script>
 
 <template>

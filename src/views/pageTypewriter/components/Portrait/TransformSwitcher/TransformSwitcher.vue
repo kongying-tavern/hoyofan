@@ -1,38 +1,39 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { ConfigConvertDirectionEnum } from "@/shared";
-import { useConfig, useFontSelector } from "../../../hooks";
-import { getThemeColor } from "@/assets/effects/theme";
-import varColor from "./color.module.scss";
-import DropdownArrow from "@/components/DropdownArrow/DropdownArrow.vue";
-import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
-import ButtonBasic from "@/components/ButtonBasic/ButtonBasic.vue";
-import ImgIconContentArrow from "../../../assets/icon-convert-arrow.svg";
+import { computed } from 'vue'
+import { getThemeColor } from '@/assets/effects/theme'
+import ButtonBasic from '@/components/ButtonBasic/ButtonBasic.vue'
+import DropdownArrow from '@/components/DropdownArrow/DropdownArrow.vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import { ConfigConvertDirectionEnum } from '@/shared'
+import ImgIconContentArrow from '../../../assets/icon-convert-arrow.svg'
+import { useConfig, useFontSelector } from '../../../hooks'
+import varColor from './color.module.scss'
 
-const { config } = useConfig();
-const { selectorVisible, toggleSelector } = useFontSelector();
+const { config } = useConfig()
+const { selectorVisible, toggleSelector } = useFontSelector()
 
 const directionClass = computed(() => {
   return {
     [config.value.convertDirection]: true,
-  };
-});
+  }
+})
 
 const convertArrowColor = computed(() =>
-  getThemeColor(varColor, "conv-arrow-color"),
-);
+  getThemeColor(varColor, 'conv-arrow-color'),
+)
 
 const selectorArrowColor = computed(() =>
-  getThemeColor(varColor, "dropdown-arrow-color"),
-);
+  getThemeColor(varColor, 'dropdown-arrow-color'),
+)
 
-const switchConvertDirection = () => {
+function switchConvertDirection() {
   if (config.value.convertDirection === ConfigConvertDirectionEnum.FROM_ENG) {
-    config.value.convertDirection = ConfigConvertDirectionEnum.TO_ENG;
-  } else {
-    config.value.convertDirection = ConfigConvertDirectionEnum.FROM_ENG;
+    config.value.convertDirection = ConfigConvertDirectionEnum.TO_ENG
   }
-};
+  else {
+    config.value.convertDirection = ConfigConvertDirectionEnum.FROM_ENG
+  }
+}
 </script>
 
 <template>

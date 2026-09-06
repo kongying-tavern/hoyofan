@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useFont } from "./hooks";
-import PortraitLayout from "./components/Portrait/PortraitLayout/PortraitLayout.vue";
+import PortraitLayout from './components/Portrait/PortraitLayout/PortraitLayout.vue'
+import { useFont } from './hooks'
 
-const { installFonts } = useFont();
+const { installFonts } = useFont()
 
-installFonts();
+installFonts()
 </script>
 
 <template>

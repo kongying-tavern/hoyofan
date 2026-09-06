@@ -1,13 +1,13 @@
 <script setup lang="ts">
-type CardSize = "large" | "medium" | "small";
+type CardSize = 'large' | 'medium' | 'small'
 
 interface Props {
-  size?: CardSize;
+  size?: CardSize
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: "medium",
-});
+  size: 'medium',
+})
 </script>
 
 <template>

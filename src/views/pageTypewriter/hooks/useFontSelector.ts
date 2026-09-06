@@ -1,17 +1,17 @@
-const selectorVisible = ref(false);
+const selectorVisible = ref(false)
 
-const openSelector = () => {
-  selectorVisible.value = true;
-};
+function openSelector() {
+  selectorVisible.value = true
+}
 
-const closeSelector = () => {
-  selectorVisible.value = false;
-};
+function closeSelector() {
+  selectorVisible.value = false
+}
 
-const toggleSelector = () => {
-  selectorVisible.value = !selectorVisible.value;
-};
+function toggleSelector() {
+  selectorVisible.value = !selectorVisible.value
+}
 
-export const useFontSelector = () => {
-  return { selectorVisible, openSelector, closeSelector, toggleSelector };
-};
+export function useFontSelector() {
+  return { selectorVisible, openSelector, closeSelector, toggleSelector }
+}

@@ -1,15 +1,12 @@
-import { get } from "lodash";
-import { useGlobalSettings } from "@/hooks";
+import { get } from 'lodash'
+import { useGlobalSettings } from '@/hooks'
 
-const { globalSettings } = useGlobalSettings();
+const { globalSettings } = useGlobalSettings()
 
-type ThemeColorExportMap = { [key: string]: string };
+interface ThemeColorExportMap { [key: string]: string }
 
-export const getThemeColor = (
-  colorMap: ThemeColorExportMap,
-  colorKey: string,
-) => {
-  const themeColorKey = `${globalSettings.value.theme || ""}--${colorKey}`;
-  const themeColorVal: string = get(colorMap, themeColorKey);
-  return themeColorVal;
-};
+export function getThemeColor(colorMap: ThemeColorExportMap, colorKey: string) {
+  const themeColorKey = `${globalSettings.value.theme || ''}--${colorKey}`
+  const themeColorVal: string = get(colorMap, themeColorKey)
+  return themeColorVal
+}

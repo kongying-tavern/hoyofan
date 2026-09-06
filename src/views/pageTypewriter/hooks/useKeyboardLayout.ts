@@ -1,352 +1,349 @@
-import { ref } from "vue";
-import { Key } from "ts-keycode-enum";
 import type {
   FontNode,
-  KeyboardLayoutOption,
-  KeyboardKeyOption,
-  KeyboardState,
   KeyboardKeyDecoration,
-} from "@/shared";
-import { useTextInput } from "./useTextInput";
-import ImgEnter from "../assets/key-enter.svg";
-import ImgBackspace from "../assets/key-backspace.svg";
-import ImgCaps from "../assets/key-caps.svg";
+  KeyboardKeyOption,
+  KeyboardLayoutOption,
+  KeyboardState,
+} from '@/shared'
+import { Key } from 'ts-keycode-enum'
+import { ref } from 'vue'
+import ImgBackspace from '../assets/key-backspace.svg'
+import ImgCaps from '../assets/key-caps.svg'
+import ImgEnter from '../assets/key-enter.svg'
+import { useTextInput } from './useTextInput'
 
-const { trimLast } = useTextInput();
+const { trimLast } = useTextInput()
 
 const keyboardState = ref<KeyboardState>({
   capsLock: false,
-});
+})
 
-const toggleCapsLock = () => {
-  keyboardState.value.capsLock = !keyboardState.value.capsLock;
-};
+function toggleCapsLock() {
+  keyboardState.value.capsLock = !keyboardState.value.capsLock
+}
 
 const keyboardLayout: KeyboardLayoutOption = {
-  colTemplate: "repeat(20, .5fr)",
-  rowTemplate: "auto",
+  colTemplate: 'repeat(20, .5fr)',
+  rowTemplate: 'auto',
   areaTemplate: [
-    "d1    d1    d2    d2    d3    d3    d4    d4    d5    d5    d6    d6    d7    d7    d8    d8    d9        d9        d0        d0",
-    "q     q     w     w     e     e     r     r     t     t     y     y     u     u     i     i     o         o         p         p",
-    ".     a     a     s     s     d     d     f     f     g     g     h     h     j     j     k     k         l         l         .",
-    "caps  caps  z     z     x     x     c     c     v     v     b     b     n     n     m     m     backspace backspace backspace backspace",
-    "space space space space space space space space space space space space space space space space enter     enter     enter     enter",
+    'd1    d1    d2    d2    d3    d3    d4    d4    d5    d5    d6    d6    d7    d7    d8    d8    d9        d9        d0        d0',
+    'q     q     w     w     e     e     r     r     t     t     y     y     u     u     i     i     o         o         p         p',
+    '.     a     a     s     s     d     d     f     f     g     g     h     h     j     j     k     k         l         l         .',
+    'caps  caps  z     z     x     x     c     c     v     v     b     b     n     n     m     m     backspace backspace backspace backspace',
+    'space space space space space space space space space space space space space space space space enter     enter     enter     enter',
   ],
-};
+}
 
-const numberDecorate = (
-  _keyboardState: KeyboardState,
-  fontOption: FontNode,
-): KeyboardKeyDecoration => {
+function numberDecorate(_keyboardState: KeyboardState, fontOption: FontNode): KeyboardKeyDecoration {
   const decorate: KeyboardKeyDecoration = {
     visible: true,
     styles: {},
     classes: {},
-  };
+  }
 
   if (!fontOption.meta?.allowNumber) {
-    decorate.visible = false;
+    decorate.visible = false
   }
-  return decorate;
-};
+  return decorate
+}
 
 const keyboardKeys: KeyboardKeyOption[] = [
   // 数字按键区
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.One, Key.Numpad1],
-    area: "d1",
+    area: 'd1',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "1",
+    displayMode: ['text'],
+    text: '1',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Two, Key.Numpad2],
-    area: "d2",
+    area: 'd2',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "2",
+    displayMode: ['text'],
+    text: '2',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Three, Key.Numpad3],
-    area: "d3",
+    area: 'd3',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "3",
+    displayMode: ['text'],
+    text: '3',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Four, Key.Numpad4],
-    area: "d4",
+    area: 'd4',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "4",
+    displayMode: ['text'],
+    text: '4',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Five, Key.Numpad5],
-    area: "d5",
+    area: 'd5',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "5",
+    displayMode: ['text'],
+    text: '5',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Six, Key.Numpad6],
-    area: "d6",
+    area: 'd6',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "6",
+    displayMode: ['text'],
+    text: '6',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Seven, Key.Numpad7],
-    area: "d7",
+    area: 'd7',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "7",
+    displayMode: ['text'],
+    text: '7',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Eight, Key.Numpad8],
-    area: "d8",
+    area: 'd8',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "8",
+    displayMode: ['text'],
+    text: '8',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Nine, Key.Numpad9],
-    area: "d9",
+    area: 'd9',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "9",
+    displayMode: ['text'],
+    text: '9',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: [Key.Zero, Key.Numpad0],
-    area: "d0",
+    area: 'd0',
     decorate: numberDecorate,
-    displayMode: ["text"],
-    text: "0",
+    displayMode: ['text'],
+    text: '0',
   },
   // 字母按键区
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.A,
-    area: "a",
-    displayMode: ["text"],
-    text: "A",
+    area: 'a',
+    displayMode: ['text'],
+    text: 'A',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.B,
-    area: "b",
-    displayMode: ["text"],
-    text: "B",
+    area: 'b',
+    displayMode: ['text'],
+    text: 'B',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.C,
-    area: "c",
-    displayMode: ["text"],
-    text: "C",
+    area: 'c',
+    displayMode: ['text'],
+    text: 'C',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.D,
-    area: "d",
-    displayMode: ["text"],
-    text: "D",
+    area: 'd',
+    displayMode: ['text'],
+    text: 'D',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.E,
-    area: "e",
-    displayMode: ["text"],
-    text: "E",
+    area: 'e',
+    displayMode: ['text'],
+    text: 'E',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.F,
-    area: "f",
-    displayMode: ["text"],
-    text: "F",
+    area: 'f',
+    displayMode: ['text'],
+    text: 'F',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.G,
-    area: "g",
-    displayMode: ["text"],
-    text: "G",
+    area: 'g',
+    displayMode: ['text'],
+    text: 'G',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.H,
-    area: "h",
-    displayMode: ["text"],
-    text: "H",
+    area: 'h',
+    displayMode: ['text'],
+    text: 'H',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.I,
-    area: "i",
-    displayMode: ["text"],
-    text: "I",
+    area: 'i',
+    displayMode: ['text'],
+    text: 'I',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.J,
-    area: "j",
-    displayMode: ["text"],
-    text: "J",
+    area: 'j',
+    displayMode: ['text'],
+    text: 'J',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.K,
-    area: "k",
-    displayMode: ["text"],
-    text: "K",
+    area: 'k',
+    displayMode: ['text'],
+    text: 'K',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.L,
-    area: "l",
-    displayMode: ["text"],
-    text: "L",
+    area: 'l',
+    displayMode: ['text'],
+    text: 'L',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.M,
-    area: "m",
-    displayMode: ["text"],
-    text: "M",
+    area: 'm',
+    displayMode: ['text'],
+    text: 'M',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.N,
-    area: "n",
-    displayMode: ["text"],
-    text: "N",
+    area: 'n',
+    displayMode: ['text'],
+    text: 'N',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.O,
-    area: "o",
-    displayMode: ["text"],
-    text: "O",
+    area: 'o',
+    displayMode: ['text'],
+    text: 'O',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.P,
-    area: "p",
-    displayMode: ["text"],
-    text: "P",
+    area: 'p',
+    displayMode: ['text'],
+    text: 'P',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Q,
-    area: "q",
-    displayMode: ["text"],
-    text: "Q",
+    area: 'q',
+    displayMode: ['text'],
+    text: 'Q',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.R,
-    area: "r",
-    displayMode: ["text"],
-    text: "R",
+    area: 'r',
+    displayMode: ['text'],
+    text: 'R',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.S,
-    area: "s",
-    displayMode: ["text"],
-    text: "S",
+    area: 's',
+    displayMode: ['text'],
+    text: 'S',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.T,
-    area: "t",
-    displayMode: ["text"],
-    text: "T",
+    area: 't',
+    displayMode: ['text'],
+    text: 'T',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.U,
-    area: "u",
-    displayMode: ["text"],
-    text: "U",
+    area: 'u',
+    displayMode: ['text'],
+    text: 'U',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.V,
-    area: "v",
-    displayMode: ["text"],
-    text: "V",
+    area: 'v',
+    displayMode: ['text'],
+    text: 'V',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.W,
-    area: "w",
-    displayMode: ["text"],
-    text: "W",
+    area: 'w',
+    displayMode: ['text'],
+    text: 'W',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.X,
-    area: "x",
-    displayMode: ["text"],
-    text: "X",
+    area: 'x',
+    displayMode: ['text'],
+    text: 'X',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Y,
-    area: "y",
-    displayMode: ["text"],
-    text: "Y",
+    area: 'y',
+    displayMode: ['text'],
+    text: 'Y',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Z,
-    area: "z",
-    displayMode: ["text"],
-    text: "Z",
+    area: 'z',
+    displayMode: ['text'],
+    text: 'Z',
   },
   // 其他按键区
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Space,
-    area: "space",
-    displayMode: ["text"],
-    text: " ",
+    area: 'space',
+    displayMode: ['text'],
+    text: ' ',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Enter,
-    area: "enter",
-    input: "\n",
-    displayMode: ["icon"],
+    area: 'enter',
+    input: '\n',
+    displayMode: ['icon'],
     icon: ImgEnter,
-    iconSizeTag: "2x",
+    iconSizeTag: '2x',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.Backspace,
-    area: "backspace",
+    area: 'backspace',
     input: () => {
-      trimLast();
+      trimLast()
     },
-    displayMode: ["icon"],
+    displayMode: ['icon'],
     icon: ImgBackspace,
-    iconSizeTag: "2x",
+    iconSizeTag: '2x',
   },
   {
-    type: "key",
+    type: 'key',
     keyCode: Key.CapsLock,
-    area: "caps",
+    area: 'caps',
     decorate: (
       keyboardState: KeyboardState,
       fontOption: FontNode,
@@ -354,36 +351,36 @@ const keyboardKeys: KeyboardKeyOption[] = [
       const decorate: KeyboardKeyDecoration = {
         styles: {},
         classes: {},
-      } as KeyboardKeyDecoration;
+      } as KeyboardKeyDecoration
       if (!fontOption.meta?.allowCapsLock) {
-        decorate.styles.visibility = "hidden";
+        decorate.styles.visibility = 'hidden'
       }
-      decorate.classes.hold = keyboardState.capsLock;
-      return decorate;
+      decorate.classes.hold = keyboardState.capsLock
+      return decorate
     },
     input: () => {
-      toggleCapsLock();
+      toggleCapsLock()
     },
-    displayMode: ["icon"],
+    displayMode: ['icon'],
     icon: ImgCaps,
   },
-];
+]
 
-const keyboardVisible = ref(false);
+const keyboardVisible = ref(false)
 
-const openKeyboard = () => {
-  keyboardVisible.value = true;
-};
+function openKeyboard() {
+  keyboardVisible.value = true
+}
 
-const closeKeyboard = () => {
-  keyboardVisible.value = false;
-};
+function closeKeyboard() {
+  keyboardVisible.value = false
+}
 
-const toggleKeyboard = () => {
-  keyboardVisible.value = !keyboardVisible.value;
-};
+function toggleKeyboard() {
+  keyboardVisible.value = !keyboardVisible.value
+}
 
-export const useKeyboardLayout = () => {
+export function useKeyboardLayout() {
   return {
     keyboardState,
     toggleCapsLock,
@@ -393,5 +390,5 @@ export const useKeyboardLayout = () => {
     openKeyboard,
     closeKeyboard,
     toggleKeyboard,
-  };
-};
+  }
+}

@@ -1,17 +1,16 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   plugins: [
-    "preset-default",
+    'preset-default',
     {
-      name: "removeAttributesBySelector",
+      name: 'removeAttributesBySelector',
       params: {
         selectors: [
           {
-            selector: "svg",
-            attributes: ["xml:space", "preserveAspectRatio"],
+            selector: 'svg',
+            attributes: ['xml:space', 'preserveAspectRatio'],
           },
         ],
       },
     },
   ],
-};
+}

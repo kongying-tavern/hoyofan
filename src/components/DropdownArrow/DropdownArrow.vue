@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
-import ImgIconDropdownArrow from "./assets/icon-dropdown-arrow.svg";
+import { computed } from 'vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import ImgIconDropdownArrow from './assets/icon-dropdown-arrow.svg'
 
 const props = defineProps<{
-  expanded: boolean;
-  expandedColor: string;
-  collapsedColor: string;
-}>();
+  expanded: boolean
+  expandedColor: string
+  collapsedColor: string
+}>()
 
 const arrowClass = computed(() => {
   return {
     expanded: props.expanded,
-  };
-});
+  }
+})
 
 const arrowColor = computed(() =>
   props.expanded ? props.expandedColor : props.collapsedColor,
-);
+)
 </script>
 
 <template>

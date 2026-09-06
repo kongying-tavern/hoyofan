@@ -7,14 +7,14 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['export', 'deep']
-      }
+        ignorePseudoClasses: ['export', 'deep'],
+      },
     ],
     'property-no-unknown': [
       true,
       {
-        ignoreSelectors: [':export']
-      }
-    ]
-  }
-};
+        ignoreSelectors: [':export'],
+      },
+    ],
+  },
+}
