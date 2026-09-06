@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import process from 'node:process'
 
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -22,6 +23,7 @@ export default defineConfig({
     cors: true,
   },
   plugins: [
+    tailwindcss(),
     vue(),
     vueJsx(),
     AutoImport({
