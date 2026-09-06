@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped lang="scss">
+@use "sass:map";
 @use "@/assets/effects/theme.scss";
 @use "./dim.scss" as *;
 @use "./color.scss" as *;
