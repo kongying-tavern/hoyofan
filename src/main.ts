@@ -10,6 +10,8 @@ import '@/assets/style/app.css'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
+document.title = import.meta.env.VITE_APP_TITLE
+
 const app = createApp(App)
 
 app.use(createPinia())
