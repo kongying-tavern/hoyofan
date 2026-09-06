@@ -38,8 +38,8 @@ $card-size-names: ("small", "medium", "large");
     // Size Variants
     @each $size-name in $card-size-names {
       &.size-#{$size-name} {
-        padding: map-get($card-padding-y, $size-name)
-          map-get($card-padding-x, $size-name);
+        padding: map.get($card-padding-y, $size-name)
+          map.get($card-padding-x, $size-name);
       }
     }
   }

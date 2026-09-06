@@ -1,19 +1,19 @@
-@use "sass:map";
-@use "./color.scss" as *;
+@use 'sass:map';
+@use './color.scss' as *;
 
 :export {
   // Theme: Light
   light--keyboard-default-color: map.get(
     $colors-light,
-    "keyboard-default-color"
+    'keyboard-default-color'
   );
-  light--keyboard-active-color: map.get($colors-light, "keyboard-active-color");
-  light--arrow-default-color: map.get($colors-light, "arrow-default-color");
-  light--arrow-active-color: map.get($colors-light, "arrow-active-color");
+  light--keyboard-active-color: map.get($colors-light, 'keyboard-active-color');
+  light--arrow-default-color: map.get($colors-light, 'arrow-default-color');
+  light--arrow-active-color: map.get($colors-light, 'arrow-active-color');
 
   // Theme: Dark
-  dark--keyboard-default-color: map.get($colors-dark, "keyboard-default-color");
-  dark--keyboard-active-color: map.get($colors-dark, "keyboard-active-color");
-  dark--arrow-default-color: map.get($colors-dark, "arrow-default-color");
-  dark--arrow-active-color: map.get($colors-dark, "arrow-active-color");
+  dark--keyboard-default-color: map.get($colors-dark, 'keyboard-default-color');
+  dark--keyboard-active-color: map.get($colors-dark, 'keyboard-active-color');
+  dark--arrow-default-color: map.get($colors-dark, 'arrow-default-color');
+  dark--arrow-active-color: map.get($colors-dark, 'arrow-active-color');
 }

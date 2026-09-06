@@ -60,7 +60,7 @@ $btn-type-names: ("default", "primary");
     // Size Variants
     @each $size-name in $btn-size-names {
       &.size-#{$size-name} {
-        padding: map-get($btn-padding, $size-name);
+        padding: map.get($btn-padding, $size-name);
       }
     }
 
