@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@aghap/semantic-release-gh-pages": "^2.0.9",
-    "@antfu/eslint-config": "^4.0.0",
+    "@antfu/eslint-config": "^9.0.0",
     "@tailwindcss/vite": "^4.0.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/lodash": "^4.14.194",
@@ -38,7 +38,7 @@
     "@vue/tsconfig": "^0.4.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.0.0",
+    "eslint": "^10.0.0",
     "rimraf": "^5.0.5",
     "sass": "^1.58.3",
     "semantic-release": "^20.1.3",
