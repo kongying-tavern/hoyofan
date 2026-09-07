@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { InputAutoSize } from 'element-plus'
-import { withDefaults } from 'vue'
 
 interface Props {
   modelValue?: string
