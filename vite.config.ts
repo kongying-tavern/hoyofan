@@ -15,6 +15,7 @@ const env = loadEnv(
 
 export default defineConfig({
   base: env.VITE_DIST_PATH || './',
+  envDir: 'env',
   server: {
     host: '0.0.0.0',
     port: 9000,
