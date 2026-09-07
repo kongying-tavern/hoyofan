@@ -1,22 +1,24 @@
-const text = ref("");
+import { ref } from 'vue'
 
-export const useTextInput = () => {
+const text = ref('')
+
+export function useTextInput() {
   const clear = () => {
-    text.value = "";
-  };
+    text.value = ''
+  }
 
   const update = (str: string) => {
-    text.value = str;
-  };
+    text.value = str
+  }
 
   const append = (chars: string) => {
-    text.value += chars;
-  };
+    text.value += chars
+  }
 
   const trimLast = () => {
-    const txt: string = text.value as string;
-    text.value = txt.substring(0, txt.length - 1);
-  };
+    const txt: string = text.value as string
+    text.value = txt.substring(0, txt.length - 1)
+  }
 
-  return { text, clear, update, append, trimLast };
-};
+  return { text, clear, update, append, trimLast }
+}

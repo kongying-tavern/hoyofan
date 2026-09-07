@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import type { FontNode } from "@/shared";
-import { getThemeColor } from "@/assets/effects/theme";
-import { useConfig, useFont, useFontSelector } from "../../../hooks";
-import varDim from "./dim.module.scss";
-import varColor from "./color.module.scss";
-import CardBasic from "@/components/CardBasic/CardBasic.vue";
-import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
+import type { FontNode } from '@/shared'
+import { computed, ref } from 'vue'
+import { getThemeColor } from '@/assets/effects/theme'
+import CardBasic from '@/components/CardBasic/CardBasic.vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import { useConfig, useFont, useFontSelector } from '../../../hooks'
+import varColor from './color.module.scss'
+import varDim from './dim.module.scss'
 
-const wrapperRef = ref<HTMLDivElement | null>(null);
+const wrapperRef = ref<HTMLDivElement | null>(null)
 
-const { config } = useConfig();
-const { fontOptions, findFontGroup } = useFont();
-const { selectorVisible, closeSelector } = useFontSelector();
+const { config } = useConfig()
+const { fontOptions, findFontGroup } = useFont()
+const { selectorVisible, closeSelector } = useFontSelector()
 
 const dialogStyle = computed(() => {
   return {
-    maxHeight: `calc(100vh - ${wrapperRef.value?.offsetTop}px - ${varDim["dialog-span-bottom"]} - ${varDim["dialog-padding-y"]} * 2)`,
-  };
-});
+    maxHeight: `calc(100vh - ${wrapperRef.value?.offsetTop}px - ${varDim['dialog-span-bottom']} - ${varDim['dialog-padding-y']} * 2)`,
+  }
+})
 
-const changeFont = (fontOption: FontNode) => {
-  config.value.font = fontOption;
-  closeSelector();
-};
+function changeFont(fontOption: FontNode) {
+  config.value.font = fontOption
+  closeSelector()
+}
 
-const selectedFontGroup = computed(() => findFontGroup(config.value.font.tag));
+const selectedFontGroup = computed(() => findFontGroup(config.value.font.tag))
 
 const fontGroupIconColor = computed(() => {
   return {
-    default: getThemeColor(varColor, "group-icon-default-color"),
-    active: getThemeColor(varColor, "group-icon-active-color"),
-  };
-});
+    default: getThemeColor(varColor, 'group-icon-default-color'),
+    active: getThemeColor(varColor, 'group-icon-active-color'),
+  }
+})
 </script>
 
 <template>
@@ -56,7 +56,9 @@ const fontGroupIconColor = computed(() => {
               :icon-src="fontGroup.icon!"
             />
           </div>
-          <div class="separator flex-none">&nbsp;</div>
+          <div class="separator flex-none">
+&nbsp;
+          </div>
           <div class="list flex-auto">
             <div
               v-for="(fontItem, itemIndex) in fontGroup.children"

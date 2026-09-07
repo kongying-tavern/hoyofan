@@ -1,24 +1,24 @@
-@use "sass:map";
-@use "./color.scss" as *;
+@use 'sass:map';
+@use './color.scss' as *;
 
 :export {
   // Theme: Light
   light--group-icon-default-color: map.get(
     $colors-light,
-    "group-icon-default-color"
+    'group-icon-default-color'
   );
   light--group-icon-active-color: map.get(
     $colors-light,
-    "group-icon-active-color"
+    'group-icon-active-color'
   );
 
   // Theme: Dark
   dark--group-icon-default-color: map.get(
     $colors-dark,
-    "group-icon-default-color"
+    'group-icon-default-color'
   );
   dark--group-icon-active-color: map.get(
     $colors-dark,
-    "group-icon-active-color"
+    'group-icon-active-color'
   );
 }

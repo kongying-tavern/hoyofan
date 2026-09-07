@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { getThemeColor } from "@/assets/effects/theme";
-import { useKeyboardLayout } from "../../../hooks";
-import varColor from "./color.module.scss";
-import CardBasic from "@/components/CardBasic/CardBasic.vue";
-import DropdownArrow from "@/components/DropdownArrow/DropdownArrow.vue";
-import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
-import ImgIconKeyboard from "../../../assets/icon-keyboard.svg";
+import { computed } from 'vue'
+import { getThemeColor } from '@/assets/effects/theme'
+import CardBasic from '@/components/CardBasic/CardBasic.vue'
+import DropdownArrow from '@/components/DropdownArrow/DropdownArrow.vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import ImgIconKeyboard from '../../../assets/icon-keyboard.svg'
+import { useKeyboardLayout } from '../../../hooks'
+import varColor from './color.module.scss'
 
-const { keyboardVisible, toggleKeyboard } = useKeyboardLayout();
+const { keyboardVisible, toggleKeyboard } = useKeyboardLayout()
 
 const keyboardClass = computed(() =>
   keyboardVisible.value ? { active: true } : {},
-);
+)
 
 const keyboardIconColor = computed(() =>
   keyboardVisible.value
-    ? getThemeColor(varColor, "keyboard-active-color")
-    : getThemeColor(varColor, "keyboard-default-color"),
-);
+    ? getThemeColor(varColor, 'keyboard-active-color')
+    : getThemeColor(varColor, 'keyboard-default-color'),
+)
 
 const arrowColor = computed(() =>
   keyboardVisible.value
-    ? getThemeColor(varColor, "arrow-active-color")
-    : getThemeColor(varColor, "arrow-default-color"),
-);
+    ? getThemeColor(varColor, 'arrow-active-color')
+    : getThemeColor(varColor, 'arrow-default-color'),
+)
 </script>
 
 <template>

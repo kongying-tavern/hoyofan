@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import _ from "lodash";
-import { computed } from "vue";
-import { useKeyboardLayout } from "../../../hooks";
-import CardBasic from "@/components/CardBasic/CardBasic.vue";
-import KeyboardKey from "./KeyboardKey.vue";
+import { chain, isEmpty, isNil } from 'lodash-es'
+import { computed } from 'vue'
+import CardBasic from '@/components/CardBasic/CardBasic.vue'
+import { useKeyboardLayout } from '../../../hooks'
+import KeyboardKey from './KeyboardKey.vue'
 
-const { keyboardLayout, keyboardKeys, keyboardVisible } = useKeyboardLayout();
+const { keyboardLayout, keyboardKeys, keyboardVisible } = useKeyboardLayout()
 
 const layoutStyles = computed(() => {
-  let areaTemplate!: string;
+  let areaTemplate!: string
   if (
-    !_.isNil(keyboardLayout.areaTemplate) &&
-    !_.isEmpty(keyboardLayout.areaTemplate)
+    !isNil(keyboardLayout.areaTemplate)
+    && !isEmpty(keyboardLayout.areaTemplate)
   ) {
-    areaTemplate = _.chain(keyboardLayout.areaTemplate)
-      .map((v) => `'${v}'`)
-      .join(" ")
-      .value();
+    areaTemplate = chain(keyboardLayout.areaTemplate)
+      .map(v => `'${v}'`)
+      .join(' ')
+      .value()
   }
 
   return {
     gridTemplateColumns: keyboardLayout.colTemplate,
     gridTemplateRows: keyboardLayout.rowTemplate,
     gridTemplateAreas: areaTemplate,
-  };
-});
+  }
+})
 </script>
 
 <template>

@@ -1,10 +1,10 @@
-@use "sass:map";
-@use "./color.scss" as *;
+@use 'sass:map';
+@use './color.scss' as *;
 
 :export {
   // Theme: Light
-  light--clear-btn-color: map.get($colors-light, "clear-btn-color");
+  light--clear-btn-color: map.get($colors-light, 'clear-btn-color');
 
   // Theme: Dark
-  dark--clear-btn-color: map.get($colors-dark, "clear-btn-color");
+  dark--clear-btn-color: map.get($colors-dark, 'clear-btn-color');
 }

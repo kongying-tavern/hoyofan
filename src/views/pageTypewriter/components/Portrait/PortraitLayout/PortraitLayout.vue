@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import TransformSwitcher from "../TransformSwitcher/TransformSwitcher.vue";
-import FontSelector from "../FontSelector/FontSelector.vue";
-import InputArea from "../InputArea/InputArea.vue";
-import PreviewArea from "../PreviewArea/PreviewArea.vue";
-import KeyboardLayout from "../KeyboardLayout/KeyboardLayout.vue";
-import ActionBar from "../ActionBar/ActionBar.vue";
+import ActionBar from '../ActionBar/ActionBar.vue'
+import FontSelector from '../FontSelector/FontSelector.vue'
+import InputArea from '../InputArea/InputArea.vue'
+import KeyboardLayout from '../KeyboardLayout/KeyboardLayout.vue'
+import PreviewArea from '../PreviewArea/PreviewArea.vue'
+import TransformSwitcher from '../TransformSwitcher/TransformSwitcher.vue'
 </script>
 
 <template>

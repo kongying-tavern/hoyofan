@@ -1,12 +1,12 @@
-@use "sass:map";
-@use "./color.scss" as *;
+@use 'sass:map';
+@use './color.scss' as *;
 
 :export {
   // Theme: Light
-  light--dropdown-arrow-color: map.get($colors-light, "dropdown-arrow-color");
-  light--conv-arrow-color: map.get($colors-light, "conv-arrow-color");
+  light--dropdown-arrow-color: map.get($colors-light, 'dropdown-arrow-color');
+  light--conv-arrow-color: map.get($colors-light, 'conv-arrow-color');
 
   // Theme: Dark
-  dark--dropdown-arrow-color: map.get($colors-dark, "dropdown-arrow-color");
-  dark--conv-arrow-color: map.get($colors-dark, "conv-arrow-color");
+  dark--dropdown-arrow-color: map.get($colors-dark, 'dropdown-arrow-color');
+  dark--conv-arrow-color: map.get($colors-dark, 'conv-arrow-color');
 }

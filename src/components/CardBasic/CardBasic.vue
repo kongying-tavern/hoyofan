@@ -1,13 +1,13 @@
 <script setup lang="ts">
-type CardSize = "large" | "medium" | "small";
+type CardSize = 'large' | 'medium' | 'small'
 
 interface Props {
-  size?: CardSize;
+  size?: CardSize
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: "medium",
-});
+  size: 'medium',
+})
 </script>
 
 <template>
@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped lang="scss">
+@use "sass:map";
 @use "@/assets/effects/theme.scss";
 @use "./dim.scss" as *;
 @use "./color.scss" as *;
@@ -38,8 +39,8 @@ $card-size-names: ("small", "medium", "large");
     // Size Variants
     @each $size-name in $card-size-names {
       &.size-#{$size-name} {
-        padding: map-get($card-padding-y, $size-name)
-          map-get($card-padding-x, $size-name);
+        padding: map.get($card-padding-y, $size-name)
+          map.get($card-padding-x, $size-name);
       }
     }
   }

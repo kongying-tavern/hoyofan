@@ -1,24 +1,23 @@
 <script setup lang="ts">
-import { withDefaults } from "vue";
-import type { InputAutoSize } from "element-plus";
+import type { InputAutoSize } from 'element-plus'
 
 interface Props {
-  modelValue: string;
-  rows?: number;
-  autosize?: InputAutoSize;
+  modelValue?: string
+  rows?: number
+  autosize?: InputAutoSize
 }
 
 withDefaults(defineProps<Props>(), {
-  modelValue: "",
-});
+  modelValue: '',
+})
 
 const emits = defineEmits<{
-  (e: "update:modelValue", text: string): void;
-}>();
+  (e: 'update:modelValue', text: string): void
+}>()
 
-const onChange = (newText: string) => {
-  emits("update:modelValue", newText);
-};
+function onChange(newText: string) {
+  emits('update:modelValue', newText)
+}
 </script>
 
 <template>

@@ -1,19 +1,21 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
+import ElementPlus from 'element-plus'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
-import App from "./App.vue";
-import router from "./router";
-import "@/assets/style/app.scss";
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import App from './App.vue'
 
-import ElementPlus from "element-plus";
-import zhCn from "element-plus/es/locale/lang/zh-cn";
-import "element-plus/dist/index.css";
-import "element-plus/theme-chalk/dark/css-vars.css";
+import router from './router'
+import '@/assets/style/app.css'
+import 'element-plus/dist/index.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
-const app = createApp(App);
+document.title = import.meta.env.VITE_APP_TITLE
 
-app.use(createPinia());
-app.use(router);
-app.use(ElementPlus, { locale: zhCn });
+const app = createApp(App)
 
-app.mount("#app");
+app.use(createPinia())
+app.use(router)
+app.use(ElementPlus, { locale: zhCn })
+
+app.mount('#app')

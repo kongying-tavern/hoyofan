@@ -1,53 +1,47 @@
 <script setup lang="ts">
-import { computed, withDefaults } from "vue";
+import { computed } from 'vue'
+import { useSvg } from './hooks'
 
 interface Props {
-  iconSrc: string;
-  color: string;
-  width?: string;
-  height?: string;
+  iconSrc: string
+  color: string
+  width?: string
+  height?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  width: "100%",
-  height: "100%",
-});
+  width: '100%',
+  height: '100%',
+})
 
-const iconStyle = computed(() => {
-  return {
-    maskImage: `url(${props.iconSrc})`,
-    backgroundColor: props.color,
-  };
-});
+const { svgHtml } = useSvg({
+  src: computed(() => props.iconSrc),
+})
 
-const placeholderStyle = computed(() => {
-  return {
-    width: props.width,
-    height: props.height,
-  };
-});
+const wrapperStyle = computed(() => {
+  const style: Record<string, string> = { color: props.color }
+  if (props.width !== '100%')
+    style.width = props.width
+  if (props.height !== '100%')
+    style.height = props.height
+  return style
+})
 </script>
 
 <template>
-  <div class="svg-icon" :style="{ ...iconStyle }">
-    <img :style="{ ...placeholderStyle }" :src="iconSrc" />
-  </div>
+  <div class="svg-icon" :style="wrapperStyle" v-html="svgHtml"></div>
 </template>
 
 <style scoped lang="scss">
 .svg-icon {
   display: inline-block;
-  position: relative;
-  overflow: hidden;
-  mask-position: center;
-  mask-size: 100% 100%;
+  line-height: 0;
 
-  img {
+  :deep(svg) {
     display: block;
     width: 100%;
     height: 100%;
-    position: relative;
-    visibility: hidden;
+    fill: currentColor;
   }
 }
 </style>

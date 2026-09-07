@@ -1,28 +1,28 @@
 <script setup lang="ts">
-type ButtonSize = "large" | "medium" | "small";
-type ButtonType = "default" | "primary";
+type ButtonSize = 'large' | 'medium' | 'small'
+type ButtonType = 'default' | 'primary'
 
 interface Props {
-  clickable?: boolean;
-  size?: ButtonSize;
-  type?: ButtonType;
+  clickable?: boolean
+  size?: ButtonSize
+  type?: ButtonType
 }
-
-const emits = defineEmits<{
-  (e: "click"): void;
-}>();
 
 const props = withDefaults(defineProps<Props>(), {
   clickable: true,
-  size: "medium",
-  type: "default",
-});
+  size: 'medium',
+  type: 'default',
+})
 
-const onClick = () => {
+const emits = defineEmits<{
+  (e: 'click'): void
+}>()
+
+function onClick() {
   if (props.clickable) {
-    emits("click");
+    emits('click')
   }
-};
+}
 </script>
 
 <template>
@@ -40,6 +40,7 @@ const onClick = () => {
 </template>
 
 <style scoped lang="scss">
+@use "sass:map";
 @use "@/assets/effects/theme.scss";
 @use "./dim.scss" as *;
 @use "./color.scss" as *;
@@ -60,7 +61,7 @@ $btn-type-names: ("default", "primary");
     // Size Variants
     @each $size-name in $btn-size-names {
       &.size-#{$size-name} {
-        padding: map-get($btn-padding, $size-name);
+        padding: map.get($btn-padding, $size-name);
       }
     }
 

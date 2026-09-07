@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { ConfigConvertDirectionEnum } from "@/shared";
-import { getThemeColor } from "@/assets/effects/theme";
-import { useConfig, useTextInput } from "../../../hooks";
-import varColor from "./color.module.scss";
-import CardBasic from "@/components/CardBasic/CardBasic.vue";
-import TextAreaBasic from "@/components/TextAreaBasic/TextAreaBasic.vue";
-import SvgIcon from "@/components/SvgIcon/SvgIcon.vue";
-import ImgIconClose from "../../../assets/icon-close.svg";
+import { computed } from 'vue'
+import { getThemeColor } from '@/assets/effects/theme'
+import CardBasic from '@/components/CardBasic/CardBasic.vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import TextAreaBasic from '@/components/TextAreaBasic/TextAreaBasic.vue'
+import { ConfigConvertDirectionEnum } from '@/shared'
+import ImgIconClose from '../../../assets/icon-close.svg'
+import { useConfig, useTextInput } from '../../../hooks'
+import varColor from './color.module.scss'
 
-const { config } = useConfig();
-const { text, clear } = useTextInput();
+const { config } = useConfig()
+const { text, clear } = useTextInput()
 
 const fontStyle = computed(() => {
   if (config.value.convertDirection === ConfigConvertDirectionEnum.TO_ENG) {
     return {
       fontFamily: config.value.font.tag,
-    };
+    }
   }
-  return {};
-});
+  return {}
+})
 
 const clearButtonColor = computed(() =>
-  getThemeColor(varColor, "clear-btn-color"),
-);
+  getThemeColor(varColor, 'clear-btn-color'),
+)
 </script>
 
 <template>

@@ -1,6 +1,6 @@
-@use "sass:math";
-@use "@/assets/vars/color.scss" as *;
-@use "./theme.scss";
+@use 'sass:math';
+@use '@/assets/vars/color.scss' as *;
+@use './theme';
 
 $scrollbar-width: 0.4rem;
 $scrollbar-radius: math.div($scrollbar-width, 2);
@@ -23,7 +23,7 @@ $scrollbar-colors: (
     .scrollbar :deep(*) {
       &::-webkit-scrollbar {
         border-radius: $scrollbar-radius;
-        background-color: theme.t("scrollbar-track-color");
+        background-color: theme.t('scrollbar-track-color');
       }
 
       &::-webkit-scrollbar:horizontal {
@@ -40,7 +40,7 @@ $scrollbar-colors: (
 
       &::-webkit-scrollbar-thumb {
         border-radius: $scrollbar-radius;
-        background-color: theme.t("scrollbar-thumb-color");
+        background-color: theme.t('scrollbar-thumb-color');
       }
     }
   }

@@ -1,32 +1,32 @@
-@use "sass:map";
-@use "./color.scss" as *;
+@use 'sass:map';
+@use './color.scss' as *;
 
 :export {
   // Theme: Light
   light--keyboard-key-icon-default-color: map.get(
     $colors-light,
-    "keyboard-key-icon-default-color"
+    'keyboard-key-icon-default-color'
   );
   light--keyboard-key-icon-active-color: map.get(
     $colors-light,
-    "keyboard-key-icon-active-color"
+    'keyboard-key-icon-active-color'
   );
   light--keyboard-key-icon-hold-color: map.get(
     $colors-light,
-    "keyboard-key-icon-hold-color"
+    'keyboard-key-icon-hold-color'
   );
 
   // Theme: Dark
   dark--keyboard-key-icon-default-color: map.get(
     $colors-dark,
-    "keyboard-key-icon-default-color"
+    'keyboard-key-icon-default-color'
   );
   dark--keyboard-key-icon-active-color: map.get(
     $colors-dark,
-    "keyboard-key-icon-active-color"
+    'keyboard-key-icon-active-color'
   );
   dark--keyboard-key-icon-hold-color: map.get(
     $colors-dark,
-    "keyboard-key-icon-hold-color"
+    'keyboard-key-icon-hold-color'
   );
 }

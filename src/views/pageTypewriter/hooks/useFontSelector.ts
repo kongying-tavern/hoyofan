@@ -1,17 +1,19 @@
-const selectorVisible = ref(false);
+import { ref } from 'vue'
 
-const openSelector = () => {
-  selectorVisible.value = true;
-};
+const selectorVisible = ref(false)
 
-const closeSelector = () => {
-  selectorVisible.value = false;
-};
+function openSelector() {
+  selectorVisible.value = true
+}
 
-const toggleSelector = () => {
-  selectorVisible.value = !selectorVisible.value;
-};
+function closeSelector() {
+  selectorVisible.value = false
+}
 
-export const useFontSelector = () => {
-  return { selectorVisible, openSelector, closeSelector, toggleSelector };
-};
+function toggleSelector() {
+  selectorVisible.value = !selectorVisible.value
+}
+
+export function useFontSelector() {
+  return { selectorVisible, openSelector, closeSelector, toggleSelector }
+}
